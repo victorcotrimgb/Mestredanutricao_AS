@@ -1,0 +1,3 @@
+- Ajuste no painel dos tensiômetros no modo Fácil: título trocado para "Teor de umidade do solo".
+- Correção da imagem/logo na tela de Nova Safra: sem corte superior, usando contain.
+- Atualizado service worker para v1.8.1.
