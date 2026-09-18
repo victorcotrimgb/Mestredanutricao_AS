@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
 <meta name="theme-color" content="#1d3b29" />
-<title>Mestre da Nutrição AS • V1.0.0</title>
+<title>Mestre da Nutrição AS • V1.0.1</title>
 <style>
 :root{
   --bg:#0c1a14;--glass:#10261df0;--glass2:#1a362bf0;--line:#ffffff26;--text:#f8f4e8;
@@ -93,7 +93,7 @@ button,input{font:inherit}button{border:0;cursor:pointer;font-weight:800}.hidden
 <div id="setupBackdrop">
   <div id="setupCard">
     <div class="setupLogoWrap"><img src="./logo.png" class="setupLogo" alt="Mestre da Nutrição AS"></div>
-    <div class="setupBrand">Mestre da Nutrição AS</div><div class="asVersion">Versão AS 1.0.0 • 6 fases</div>
+    <div class="setupBrand">Mestre da Nutrição AS</div><div class="asVersion">Versão AS 1.0.1 • 6 fases</div>
     <div class="setupTitle">Nova safra</div>
     <div class="setupLead">Digite seu nome para iniciar a safra. <b>Atenção:</b> este é um jogo educativo. As informações exibidas aqui não devem ser usadas como recomendação real de manejo em campo.</div>
     <div class="nameField"><label for="playerNameInput">Nome do jogador</label><input id="playerNameInput" maxlength="28" autocomplete="name" placeholder="Ex.: Arthur"></div>
@@ -123,7 +123,7 @@ button,input{font:inherit}button{border:0;cursor:pointer;font-weight:800}.hidden
 <div id="gameMenuBackdrop">
   <div class="gameMenuCard">
     <div class="gameMenuHead"><div><div class="eyebrow">MESTRE DA NUTRIÇÃO AS</div><h2>Menu</h2></div><button id="menuClose" class="menuClose" aria-label="Fechar">×</button></div>
-    <div class="menuStatus"><span>Versão do jogo</span><b id="pwaMenuStatus">AS 1.0.0 • 6 fases</b></div>
+    <div class="menuStatus"><span>Versão do jogo</span><b id="pwaMenuStatus">AS 1.0.1 • 6 fases</b></div>
     <div class="menuActions">
       <button id="menuContinue" class="menuAction primaryMenu"><div><strong>Continuar safra</strong><small>Voltar imediatamente ao campo</small></div><span class="menuIcon">▶</span></button>
       <button id="menuHome" class="menuAction"><div><strong>Voltar ao menu inicial</strong><small>Retorna à tela de nome e dificuldade sem apagar a safra</small></div><span class="menuIcon">⌂</span></button>
@@ -131,7 +131,7 @@ button,input{font:inherit}button{border:0;cursor:pointer;font-weight:800}.hidden
       <button id="menuSound" class="menuAction"><div><strong id="menuSoundTitle">Som</strong><small id="menuSoundSub">Música e efeitos</small></div><span id="menuSoundIcon" class="menuIcon">🔊</span></button>
       <button id="menuRestart" class="menuAction dangerMenu"><div><strong>Reiniciar safra</strong><small>Apaga o progresso da safra atual e começa novamente</small></div><span class="menuIcon">⟳</span></button>
     </div>
-    <div class="menuFooter">Mestre da Nutrição AS • Versão 1.0.0 • 6 fases • Jogo educativo. As informações do simulador não devem ser usadas como recomendação de manejo em condições reais.</div>
+    <div class="menuFooter">Mestre da Nutrição AS • Versão 1.0.1 • 6 fases • Jogo educativo. As informações do simulador não devem ser usadas como recomendação de manejo em condições reais.</div>
   </div>
 </div>
 <div id="mobileControls">
@@ -259,10 +259,9 @@ const nutrientLabels={N:'N',P:'P₂O₅',K:'K₂O',Ca:'Ca',Mg:'Mg',S:'S',B:'B',F
 
 // Garantias em fração de massa. Nforms são frações do N total.
 const fertilizers=[
- {id:'alface',name:'Dripsol Alface',conflictCa:true,meta:'8% N • 9% P₂O₅ • 34% K₂O • 2,5% Mg • 5,5% S • 0,03% B • 0,20% Fe • 0,04% Mn',g:{N:.08,P:.09,K:.34,Mg:.025,S:.055,B:.0003,Fe:.002,Mn:.0004},nf:{no3:.8875,nh4:.1125,amide:0},microChelate:.55,salt:1.15},
- {id:'morango',name:'Dripsol Morango',conflictCa:true,meta:'8% N • 8% P₂O₅ • 40% K₂O • 1% Mg • 3% S • 0,03% B • 0,10% Zn • 0,005% Mo',g:{N:.08,P:.08,K:.40,Mg:.01,S:.03,B:.0003,Zn:.001,Mo:.00005},nf:{no3:1,nh4:0,amide:0},microChelate:.55,salt:.95},
- {id:'inicial',name:'Dripsol Inicial',conflictCa:true,meta:'15% N • 30% P₂O₅ • 15% K₂O • 1% S • B • Zn • Cu • Mn • Mo',g:{N:.15,P:.30,K:.15,S:.01,B:.0003,Zn:.001,Cu:.0005,Mn:.0005,Mo:.00005},nf:{no3:6.4/15,nh4:8.6/15,amide:0},microChelate:.55,salt:1.02},
- {id:'crescimento',name:'Dripsol Crescimento',conflictCa:true,meta:'24% N • 10% P₂O₅ • 10% K₂O • 1,2% S • B • Zn • Mn • Cu • Mo',g:{N:.24,P:.10,K:.10,S:.012,B:.0003,Zn:.001,Mn:.0005,Cu:.0006,Mo:.00005},nf:{no3:11.8/24,nh4:12.2/24,amide:0},microChelate:.55,salt:1.20},
+ {id:'solanaceas',name:'Dripsol Solanáceas',conflictCa:true,meta:'12% N • 10% P₂O₅ • 25% K₂O • 2,4% Mg • 4,1% S • 0,85% B',g:{N:.12,P:.10,K:.25,Mg:.024,S:.041,B:.0085},nf:{no3:8.3/12,nh4:3.7/12,amide:0},microChelate:.55,salt:1.26},
+ {id:'banana',name:'Dripsol Banana',conflictCa:true,meta:'10% N • 2% P₂O₅ • 39% K₂O • 1,5% Mg • 4,5% S • 0,03% B • 0,05% Cu • 0,008% Mo • 0,10% Zn • N 100% nítrico',g:{N:.10,P:.02,K:.39,Mg:.015,S:.045,B:.0003,Cu:.0005,Mo:.00008,Zn:.001},nf:{no3:1,nh4:0,amide:0},microChelate:.55,salt:1.17},
+ {id:'dripsol54',name:'Dripsol 54',conflictCa:true,meta:'7% N • 2% P₂O₅ • 45% K₂O • N 100% nítrico',g:{N:.07,P:.02,K:.45},nf:{no3:1,nh4:0,amide:0},microChelate:.5,salt:1.00},
  {id:'raiz',name:'Dripsol +Raiz',conflictCa:true,meta:'11% N • 40% P₂O₅ • 11% K₂O • Mg • S • B • Zn • Cu • Mo',g:{N:.11,P:.40,K:.11,Mg:.011,S:.019,B:.001,Zn:.001,Cu:.0005,Mo:.00005},nf:{no3:3/11,nh4:8/11,amide:0},microChelate:.55,salt:.82},
  {id:'microeq',name:'Dripsol Micro Equilíbrio',meta:'1,2% Mg • 0,85% B • 3,4% Fe • 4,2% Zn • 3,2% Mn • 0,5% Cu • 0,06% Mo',g:{Mg:.012,B:.0085,Fe:.034,Zn:.042,Mn:.032,Cu:.005,Mo:.0006},nf:{no3:0,nh4:0,amide:0},microChelate:1,salt:.75},
  {id:'calcium',name:'Dripsol Calcium / Nitrato de Cálcio',isCalcium:true,meta:'15,5% N • 19% Ca',g:{N:.155,Ca:.19},nf:{no3:1,nh4:0,amide:0},microChelate:.5,salt:1.15},
@@ -454,7 +453,7 @@ load();if(state.weekIndex>TOTAL_PHASES||state.history.some(h=>(h.week||0)>TOTAL_
 
 
 <script>
-// AS 1.0.0: versão temporária sem instalação; remove caches/PWA antigos.
+// AS 1.0.1: versão temporária sem instalação; remove caches/PWA antigos.
 if('serviceWorker' in navigator){navigator.serviceWorker.getRegistrations().then(rs=>Promise.all(rs.map(r=>r.unregister()))).catch(()=>{});}
 if('caches' in window){caches.keys().then(keys=>Promise.all(keys.map(k=>caches.delete(k)))).catch(()=>{});}
 </script>
